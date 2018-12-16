@@ -21,6 +21,7 @@
         background: #ddd;
         text-align: center;
         font-size: 8em;
+        position: relative;
       }
 
       .bg-pink {
@@ -52,6 +53,17 @@
         font-weight: bold;
         text-align: center;
         text-decoration: none;
+      }
+
+      .list > input {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        clip: rect(0 0 0 0);
       }
     </style>
   </head>
@@ -112,6 +124,7 @@
                   background: #ddd;
                   text-align: center;
                   font-size: 8em;
+                  position: relative;
                 }
 
                 .bg-pink {
@@ -156,16 +169,16 @@
             <div class="effort">
               <h3>效果：</h3>
               <div class="box">
-                <div class="list" id="one-res">1</div>
-                <div class="list bg-pink" id="two-res">2</div>
-                <div class="list bg-olive" id="three-res">3</div>
-                <div class="list bg-orange" id="four-res">4</div>
+                <div class="list" id="one-res1">1</div>
+                <div class="list bg-pink" id="two-res1">2</div>
+                <div class="list bg-olive" id="three-res1">3</div>
+                <div class="list bg-orange" id="four-res1">4</div>
               </div>
               <div class="link">
-                <a class="click" href="#one-res">1</a>
-                <a class="click" href="#two-res">2</a>
-                <a class="click" href="#three-res">3</a>
-                <a class="click" href="#four-res">4</a>
+                <a class="click" href="#one-res1">1</a>
+                <a class="click" href="#two-res1">2</a>
+                <a class="click" href="#three-res1">3</a>
+                <a class="click" href="#four-res1">4</a>
               </div>
             </div>
             <div class="desc">
@@ -179,16 +192,16 @@
                   <h4>html代码</h4>
                   <p>
                     &lt;div class="box"&gt;
-                      &lt;div class="list" id="one-res"&gt;1&lt;/div&gt;
-                      &lt;div class="list bg-pink" id="two-res"&gt;2&lt;/div&gt;
-                      &lt;div class="list bg-olive" id="three-res"&gt;3&lt;/div&gt;
-                      &lt;div class="list bg-orange" id="four-res"&gt;4&lt;/div&gt;
+                      &lt;div class="list" id="one-res1"&gt;1&lt;/div&gt;
+                      &lt;div class="list bg-pink" id="two-res1"&gt;2&lt;/div&gt;
+                      &lt;div class="list bg-olive" id="three-res1"&gt;3&lt;/div&gt;
+                      &lt;div class="list bg-orange" id="four-res1"&gt;4&lt;/div&gt;
                     &lt;/div&gt;
                     &lt;div class="link"&gt;
-                      &lt;a class="click" href="#one-res"&gt;1&lt;/a&gt;
-                      &lt;a class="click" href="#two-res"&gt;2&lt;/a&gt;
-                      &lt;a class="click" href="#three-res"&gt;3&lt;/a&gt;
-                      &lt;a class="click" href="#four-res"&gt;4&lt;/a&gt;
+                      &lt;a class="click" href="#one-res1"&gt;1&lt;/a&gt;
+                      &lt;a class="click" href="#two-res1"&gt;2&lt;/a&gt;
+                      &lt;a class="click" href="#three-res1"&gt;3&lt;/a&gt;
+                      &lt;a class="click" href="#four-res1"&gt;4&lt;/a&gt;
                     &lt;/div&gt;
                   </p>
                 </div>
@@ -208,6 +221,7 @@
                       background: #ddd;
                       text-align: center;
                       font-size: 8em;
+                      position: relative;
                     }
 
                     .bg-pink {
@@ -239,6 +253,122 @@
                       font-weight: bold;
                       text-align: center;
                       text-decoration: none;
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="effort">
+              <h3>效果：</h3>
+              <div class="box">
+                <div class="list">
+                  <input id="oneRes2">
+                  1
+                </div>
+                <div class="list bg-pink">
+                  <input id="twoRes2">
+                  2
+                </div>
+                <div class="list bg-olive">
+                  <input id="threeRes2">
+                  3
+                </div>
+                <div class="list bg-orange">
+                  <input id="fourRes2">
+                  4
+                </div>
+              </div>
+              <div class="link">
+                <label class="click" for="oneRes2">1</label>
+                <label class="click" for="twoRes2">2</label>
+                <label class="click" for="threeRes2">3</label>
+                <label class="click" for="fourRes2">4</label>
+              </div>
+            </div>
+            <div class="desc">
+              <h3>描述:</h3>
+              <p>通过透明边框来实现padding效果</p>
+            </div>
+            <div class="code">
+              <h3>代码：</h3>
+              <div>
+                <div class="code-html">
+                  <h4>html代码</h4>
+                  <p>
+                    &lt;div class="box"&gt;
+                    &lt;div class="list" id="one-res1"&gt;1&lt;/div&gt;
+                    &lt;div class="list bg-pink" id="two-res1"&gt;2&lt;/div&gt;
+                    &lt;div class="list bg-olive" id="three-res1"&gt;3&lt;/div&gt;
+                    &lt;div class="list bg-orange" id="four-res1"&gt;4&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="link"&gt;
+                    &lt;a class="click" href="#one-res1"&gt;1&lt;/a&gt;
+                    &lt;a class="click" href="#two-res1"&gt;2&lt;/a&gt;
+                    &lt;a class="click" href="#three-res1"&gt;3&lt;/a&gt;
+                    &lt;a class="click" href="#four-res1"&gt;4&lt;/a&gt;
+                    &lt;/div&gt;
+                  </p>
+                </div>
+                <div class="code-css">
+                  <h4>css 代码</h4>
+                  <p>
+                    .box {
+                    width: 20em;
+                    height: 10em;
+                    line-height: 10em;
+                    border: 1px solid #ddd;
+                    overflow: hidden;
+                    margin: auto;
+                    }
+
+                    .list {
+                    background: #ddd;
+                    text-align: center;
+                    font-size: 8em;
+                    position: relative;
+                    }
+
+                    .bg-pink {
+                    background-color: lightpink
+                    }
+
+                    .bg-olive {
+                    background-color: #B9F2D8;
+                    }
+
+                    .bg-orange {
+                    background-color: #FCCBA2;
+                    }
+
+                    .link {
+                    margin-top: 1em;
+                    text-align: center;
+                    }
+
+                    .click {
+                    display: inline-block;
+                    width: 2em;
+                    height: 2em;
+                    line-height: 2em;
+                    border: 1px solid #ccc;
+                    background: #f7f7f7;
+                    color: #333;
+                    font-size: 1em;
+                    font-weight: bold;
+                    text-align: center;
+                    text-decoration: none;
+                    }
+                    .list > input {
+                      position: absolute;
+                      top: 0;
+                      height: 100%;
+                      width: 1px;
+                      border: 0;
+                      padding: 0;
+                      margin: 0;
+                      clip: rect(0 0 0 0);
                     }
                   </p>
                 </div>
