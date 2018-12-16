@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>不依赖js实现tab切换</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../assert/css/common.css">
+    <style>
+      .box {
+        width: 20em;
+        height: 10em;
+        line-height: 10em;
+        border: 1px solid #ddd;
+        overflow: hidden;
+        margin: auto;
+      }
+      
+      .list {
+        background: #ddd;
+        text-align: center;
+        font-size: 8em;
+      }
+
+      .bg-pink {
+        background-color: lightpink
+      }
+
+      .bg-olive {
+        background-color: #B9F2D8;
+      }
+
+      .bg-orange {
+        background-color: #FCCBA2;
+      }
+
+      .link {
+        margin-top: 1em;
+        text-align: center;
+      }
+
+      .click {
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
+        border: 1px solid #ccc;
+        background: #f7f7f7;
+        color: #333;
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>不依赖js实现tab切换</h1>
+      <div class="phenomenon">
+        <h2>现象</h2>
+        <div class="effort">
+          <h3>效果：</h3>
+          <div class="box">
+            <div class="list" id="one">1</div>
+            <div class="list bg-pink" id="two">2</div>
+            <div class="list bg-olive" id="three">3</div>
+            <div class="list bg-orange" id="four">4</div>
+          </div>
+          <div class="link">
+            <a class="click" href="#one">1</a>
+            <a class="click" href="#two">2</a>
+            <a class="click" href="#three">3</a>
+            <a class="click" href="#four">4</a>
+          </div>
+        </div>
+        <div class="code">
+          <h3>代码：</h3>
+          <div>
+            <div class="code-html">
+              <h4>html代码</h4>
+              <p>
+                &lt;div class="box"&gt;
+                &lt;div class="list" id="one"&gt;1&lt;/div&gt;
+                  &lt;div class="list bg-pink" id="two"&gt;2&lt;/div&gt;
+                  &lt;div class="list bg-olive" id="three"&gt;3&lt;/div&gt;
+                  &lt;div class="list bg-orange" id="four"&gt;4&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="link"&gt;
+                  &lt;a class="click" href="#one"&gt;1&lt;/a&gt;
+                  &lt;a class="click" href="#two"&gt;2&lt;/a&gt;
+                  &lt;a class="click" href="#three"&gt;3&lt;/a&gt;
+                  &lt;a class="click" href="#four"&gt;4&lt;/a&gt;
+                &lt;/div&gt;
+              </p>
+            </div>
+            <div class="code-css">
+              <h4>css 代码</h4>
+              <p>
+                .box {
+                  width: 20em;
+                  height: 10em;
+                  line-height: 10em;
+                  border: 1px solid #ddd;
+                  overflow: hidden;
+                  margin: auto;
+                }
+
+                .list {
+                  background: #ddd;
+                  text-align: center;
+                  font-size: 8em;
+                }
+
+                .bg-pink {
+                  background-color: lightpink
+                }
+
+                .bg-olive {
+                  background-color: #B9F2D8;
+                }
+
+                .bg-orange {
+                  background-color: #FCCBA2;
+                }
+
+                .link {
+                  margin-top: 1em;
+                  text-align: center;
+                }
+
+                .click {
+                  display: inline-block;
+                  width: 2em;
+                  height: 2em;
+                  line-height: 2em;
+                  border: 1px solid #ccc;
+                  background: #f7f7f7;
+                  color: #333;
+                  font-size: 1em;
+                  font-weight: bold;
+                  text-align: center;
+                  text-decoration: none;
+                }
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>解决方案</h2>
+        <ol>
+          <li>
+            <div class="effort">
+              <h3>效果：</h3>
+              <div class="box">
+                <div class="list" id="one-res">1</div>
+                <div class="list bg-pink" id="two-res">2</div>
+                <div class="list bg-olive" id="three-res">3</div>
+                <div class="list bg-orange" id="four-res">4</div>
+              </div>
+              <div class="link">
+                <a class="click" href="#one-res">1</a>
+                <a class="click" href="#two-res">2</a>
+                <a class="click" href="#three-res">3</a>
+                <a class="click" href="#four-res">4</a>
+              </div>
+            </div>
+            <div class="desc">
+              <h3>描述:</h3>
+              <p>通过透明边框来实现padding效果</p>
+            </div>
+            <div class="code">
+              <h3>代码：</h3>
+              <div>
+                <div class="code-html">
+                  <h4>html代码</h4>
+                  <p>
+                    &lt;div class="box"&gt;
+                      &lt;div class="list" id="one-res"&gt;1&lt;/div&gt;
+                      &lt;div class="list bg-pink" id="two-res"&gt;2&lt;/div&gt;
+                      &lt;div class="list bg-olive" id="three-res"&gt;3&lt;/div&gt;
+                      &lt;div class="list bg-orange" id="four-res"&gt;4&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="link"&gt;
+                      &lt;a class="click" href="#one-res"&gt;1&lt;/a&gt;
+                      &lt;a class="click" href="#two-res"&gt;2&lt;/a&gt;
+                      &lt;a class="click" href="#three-res"&gt;3&lt;/a&gt;
+                      &lt;a class="click" href="#four-res"&gt;4&lt;/a&gt;
+                    &lt;/div&gt;
+                  </p>
+                </div>
+                <div class="code-css">
+                  <h4>css 代码</h4>
+                  <p>
+                    .box {
+                      width: 20em;
+                      height: 10em;
+                      line-height: 10em;
+                      border: 1px solid #ddd;
+                      overflow: hidden;
+                      margin: auto;
+                    }
+
+                    .list {
+                      background: #ddd;
+                      text-align: center;
+                      font-size: 8em;
+                    }
+
+                    .bg-pink {
+                      background-color: lightpink
+                    }
+
+                    .bg-olive {
+                      background-color: #B9F2D8;
+                    }
+
+                    .bg-orange {
+                      background-color: #FCCBA2;
+                    }
+
+                    .link {
+                      margin-top: 1em;
+                      text-align: center;
+                    }
+
+                    .click {
+                      display: inline-block;
+                      width: 2em;
+                      height: 2em;
+                      line-height: 2em;
+                      border: 1px solid #ccc;
+                      background: #f7f7f7;
+                      color: #333;
+                      font-size: 1em;
+                      font-weight: bold;
+                      text-align: center;
+                      text-decoration: none;
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+  </body>
+
+</html>

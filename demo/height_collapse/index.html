@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>解决高度塌陷示例</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../../assert/css/common.css">
+  <style>
+    .height-collapse {
+      background-color: red;
+      min-height: 20px;
+    }
+    .height-collapse img {
+      float: left;
+      width: 300px;
+    }
+    
+    .height-collapse-fix-1 {
+      background-color: red;
+      min-height: 20px;
+    }
+    .height-collapse-fix-1 img {
+      float: left;
+      width: 300px;
+    }
+
+    .height-collapse-fix-1::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .height-collapse-fix-2 {
+      background-color: red;
+      min-height: 20px;
+      overflow: hidden;
+    }
+    .height-collapse-fix-2 img {
+      float: left;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>高度塌陷</h1>
+    <div class="phenomenon">
+      <h2>现象</h2>
+      <div class="effort">
+        <h3>效果：</h3>
+        <div class="height-collapse">
+          <img src="../../assert/images/demo_1.jpg">
+        </div>
+      </div>
+      <div class="code">
+        <h3>代码：</h3>
+        <div>
+          <div class="code-html">
+            <h4>html代码</h4>
+            <p>
+              &lt;div class="height-collapse" &gt;
+                &lt;img src="../../assert/images/demo_1.jpg"&gt;
+              &lt;/div&gt;
+            </p>
+          </div>
+          <div class="code-css">
+            <h4>css 代码</h4>
+            <p>
+              .height-collapse {
+                background-color: red;
+                min-height: 20px;
+              }
+              .height-collapse img {
+                float: left;
+                width: 300px;
+              }
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>解决方案</h2>
+      <ol>
+        <li>
+          <div class="effort">
+            <h3>效果：</h3>
+            <div class="height-collapse-fix-1">
+              <img src="../../assert/images/demo_1.jpg">
+            </div>
+          </div>
+          <div class="desc">
+            <h3>描述:</h3>
+            <p>通过::after伪类在高度塌陷元素的最后插入一个伪元素，并设置这该元素清除浮动，但是由于clear只有对块级元素才有效，而::after伪元素默认都是内联水平，所以还要将伪元素的display设置为block，这样就可以达到效果了。</p>
+          </div>
+          <div class="code">
+            <h3>代码：</h3>
+            <div>
+              <div class="code-html">
+                <h4>html代码</h4>
+                <p>
+                  &lt;div class="height-collapse-fix-1" &gt;
+                  &lt;img src="../../assert/images/demo_1.jpg"&gt;
+                  &lt;/div&gt;
+                </p>
+              </div>
+              <div class="code-css">
+                <h4>css 代码</h4>
+                <p>
+                  .height-collapse-fix-1 {
+                    background-color: red;
+                    min-height: 20px;
+                  }
+                  .height-collapse-fix-1 img {
+                    float: left;
+                    width: 300px;
+                  }
+
+                  .height-collapse-fix-1::after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                  }
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="effort">
+            <h3>效果：</h3>
+            <div class="height-collapse-fix-2">
+              <img src="../../assert/images/demo_1.jpg">
+            </div>
+          </div>
+          <div class="desc">
+            <h3>描述:</h3>
+            <p>触发元素的BFC特性，比如将overflow设置为hidden，BFC具体介绍请戳<a href="../../assert/doc/BFC介绍.md">这里</a></p>
+          </div>
+          <div class="code">
+            <h3>代码：</h3>
+            <div>
+              <div class="code-html">
+                <h4>html代码</h4>
+                <p>
+                  &lt;div class="height-collapse-fix-2" &gt;
+                  &lt;img src="../../assert/images/demo_1.jpg"&gt;
+                  &lt;/div&gt;
+                </p>
+              </div>
+              <div class="code-css">
+                <h4>css 代码</h4>
+                <p>
+                  .height-collapse-fix-2 {
+                    background-color: red;
+                    min-height: 20px;
+                    overflow: hidden;
+                  }
+                  .height-collapse-fix-2 img {
+                    float: left;
+                    width: 300px;
+                  }
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+  
+</body>
+</html>

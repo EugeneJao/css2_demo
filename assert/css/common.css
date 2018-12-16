@@ -1,0 +1,40 @@
+.container {
+  width: 90%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.effort::after {
+  content: "";
+  display: block;
+  clear: both;
+  font-size: 0;
+}
+
+
+.code .code-html {
+  width: 50%;
+  float: left;
+}
+
+.code .code-css {
+  width: 50%;
+  float: right;
+}
+
+.code .code-html p, 
+.code .code-css p {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.code::after {
+  content: "";
+  display: block;
+  clear: both;
+  font-size: 0;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>overflow:hidden，子元素超出父元素后，父元素padding失效</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../../assert/css/common.css">
+  <style>
+    .parent-elm-effort {
+      width: 300px;
+      height: 160px;
+      padding: 10px;
+      /* border: 1px solid; */
+      overflow: hidden;
+      background-color: lightblue;
+    }
+
+    .parent-elm-resolve {
+      width: 300px;
+      height: 160px;
+      /* padding: 10px; */
+      border: 10px solid transparent;
+      overflow: hidden;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>overflow:hidden，子元素超出父元素后，父元素padding失效</h1>
+    <div class="phenomenon">
+      <h2>现象</h2>
+      <div class="effort">
+        <h3>效果：</h3>
+        <div class="parent-elm-effort">
+          <img class="child-elm-effort" src="../../assert/images/demo_1.jpg">
+        </div>
+      </div>
+      <div class="code">
+        <h3>代码：</h3>
+        <div>
+          <div class="code-html">
+            <h4>html代码</h4>
+            <p>
+              &lt;div class="parent-elm-effort"&gt;
+                &lt;img class="child-elm-effort" src="../../assert/images/demo_1.jpg"&gt;
+              &lt;/div&gt;
+            </p>
+          </div>
+          <div class="code-css">
+            <h4>css 代码</h4>
+            <p>
+              .parent-elm-effort {
+                width: 300px;
+                height: 160px;
+                padding: 10px;
+                overflow: hidden;
+                background-color: blue;
+              }
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>解决方案</h2>
+      <ol>
+        <li>
+          <div class="effort">
+            <h3>效果：</h3>
+            <div class="parent-elm-resolve">
+              <img class="child-elm-resolve" src="../../assert/images/demo_1.jpg">
+            </div>
+          </div>
+          <div class="desc">
+            <h3>描述:</h3>
+            <p>通过透明边框来实现padding效果</p>
+          </div>
+          <div class="code">
+            <h3>代码：</h3>
+            <div>
+              <div class="code-html">
+                <h4>html代码</h4>
+                <p>
+                  &lt;div class="parent-elm-resolve"&gt;
+                  &lt;img class="child-elm-resolve" src="../../assert/images/demo_1.jpg"&gt;
+                  &lt;/div&gt;
+                </p>
+              </div>
+              <div class="code-css">
+                <h4>css 代码</h4>
+                <p>
+                  .parent-elm-resolve {
+                    width: 300px;
+                    height: 160px;
+                    /* padding: 10px; */
+                    border: 10px solid transparent;
+                    overflow: hidden;
+                    background-color: lightblue;
+                    }
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+</body>
+
+</html>

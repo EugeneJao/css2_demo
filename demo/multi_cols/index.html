@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>多列布局</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../../assert/css/common.css">
+  <style>
+    .multi-cols-container {
+      background-color: lightgray;
+      overflow: hidden;
+    }
+
+    .multi-cols-left {
+      background-color: yellow;
+    }
+    .multi-cols-mid {
+      background-color: lightblue;
+    }
+    .multi-cols-right {
+      background-color: lightgreen;
+      
+    }
+    .multi-cols-1 {
+      float: left;
+      width: 33.3%;
+      padding: 10px;
+      word-break: break-all;
+      box-sizing: border-box;
+    }
+
+    .multi-cols-2 {
+      width: 9999px;
+      padding: 10px;
+      word-break: break-all;
+      box-sizing: border-box;
+      display: table-cell;
+    }
+
+    .multi-cols-3 {
+      width: 33%;
+      padding: 10px;
+      word-break: break-all;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>多列布局</h1>
+    <div>
+      <h2>解决方案</h2>
+      <ol>
+        <li>
+          <div class="effort">
+            <h3>效果：</h3>
+            <div class="multi-cols-container">
+              <div class="multi-cols-left multi-cols-1">
+                <p>test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;</p>
+              </div>
+              <div class="multi-cols-mid multi-cols-1">
+                <p>test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;</p>
+              </div>
+              <div class="multi-cols-right multi-cols-1">
+                <p>test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;</p>
+              </div>
+            </div>
+          </div>
+          <div class="desc">
+            <h3>描述:</h3>
+            <p>通过float触发元素BFC特性，但是宽度需要显式精确的指定。</p>
+          </div>
+          <div class="code">
+            <h3>代码：</h3>
+            <div>
+              <div class="code-html">
+                <h4>html代码</h4>
+                <p>
+                  &lt;div class="multi-cols-container"&gt;
+                    &lt;div class="multi-cols-left multi-cols-1"&gt;
+                      &lt;p&gt;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class="multi-cols-mid multi-cols-1"&gt;
+                      &lt;p&gt;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class="multi-cols-right multi-cols-1"&gt;
+                      &lt;p&gt;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                      test&nbsp;&lt;/p&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                </p>
+              </div>
+              <div class="code-css">
+                <h4>css 代码</h4>
+                <p>
+                  .multi-cols-container {
+                    background-color: lightgray;
+                    overflow: hidden;
+                  }
+
+                  .multi-cols-left {
+                    background-color: yellow;
+                  }
+                  .multi-cols-mid {
+                    background-color: lightblue;
+                  }
+                  .multi-cols-right {
+                    background-color: lightgreen;
+                  }
+                  .multi-cols-1 {
+                    float: left;
+                    width: 33.3%;
+                    padding: 10px;
+                    word-break: break-all;
+                    box-sizing: border-box;
+                  }
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="effort">
+            <h3>效果：</h3>
+            <div class="multi-cols-container">
+              <div class="multi-cols-left multi-cols-2">
+                <p>test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;</p>
+              </div>
+              <div class="multi-cols-mid multi-cols-2">
+                <p>test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;</p>
+              </div>
+              <div class="multi-cols-right multi-cols-2">
+                <p>test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;</p>
+              </div>
+            </div>
+          </div>
+          <div class="desc">
+            <h3>描述:</h3>
+            <p>通过display:table-cell触发元素BFC特性，但是宽度不需要精确的指定，但是需要hack的指定一个足够大的宽度，防止模块宽度分配不均匀的问题。只适用于IE8以及以上的浏览器。</p>
+          </div>
+          <div class="code">
+            <h3>代码：</h3>
+            <div>
+              <div class="code-html">
+                <h4>html代码</h4>
+                <p>
+                  &lt;div class="multi-cols-container"&gt;
+                  &lt;div class="multi-cols-left multi-cols-2"&gt;
+                  &lt;p&gt;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;&lt;/p&gt;
+                  &lt;/div&gt;
+                  &lt;div class="multi-cols-mid multi-cols-2"&gt;
+                  &lt;p&gt;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;&lt;/p&gt;
+                  &lt;/div&gt;
+                  &lt;div class="multi-cols-right multi-cols-2"&gt;
+                  &lt;p&gt;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;&lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              </p>
+            </div>
+            <div class="code-css">
+              <h4>css 代码</h4>
+              <p>
+                .multi-cols-container {
+                  background-color: lightgray;
+                  overflow: hidden;
+                }
+
+                .multi-cols-left {
+                  background-color: yellow;
+                }
+                .multi-cols-mid {
+                  background-color: lightblue;
+                }
+                .multi-cols-right {
+                  background-color: lightgreen;
+                }
+                .multi-cols-2 {
+                  width: 9999px;
+                  padding: 10px;
+                  word-break: break-all;
+                  box-sizing: border-box;
+                  display: table-cell;
+                }
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="effort">
+            <h3>效果：</h3>
+            <div class="multi-cols-container">
+              <div class="multi-cols-left multi-cols-3">
+                <p>test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;</p>
+              </div>
+              <div class="multi-cols-mid multi-cols-3">
+                <p>test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;</p>
+              </div>
+              <div class="multi-cols-right multi-cols-3">
+                <p>test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;</p>
+              </div>
+            </div>
+          </div>
+          <div class="desc">
+            <h3>描述:</h3>
+            <p>通过display:inline-block触发元素BFC特性，宽度需要显示精确指定，而且由于inline-block的特性，列之间会出现多余的间隙。但是在ie6和ie7下会自适应容器可用宽度</p>
+          </div>
+          <div class="code">
+            <h3>代码：</h3>
+            <div>
+              <div class="code-html">
+                <h4>html代码</h4>
+                <p>
+                  &lt;div class="multi-cols-container"&gt;
+                  &lt;div class="multi-cols-left multi-cols-3"&gt;
+                  &lt;p&gt;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;&lt;/p&gt;
+                  &lt;/div&gt;
+                  &lt;div class="multi-cols-mid multi-cols-3"&gt;
+                  &lt;p&gt;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;&lt;/p&gt;
+                  &lt;/div&gt;
+                  &lt;div class="multi-cols-right multi-cols-3"&gt;
+                  &lt;p&gt;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;test&nbsp;test&nbsp;test&nbsp;test&nbsp;
+                  test&nbsp;&lt;/p&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                </p>
+              </div>
+              <div class="code-css">
+                <h4>css 代码</h4>
+                <p>
+                  .multi-cols-container {
+                    background-color: lightgray;
+                    overflow: hidden;
+                  }
+
+                  .multi-cols-left {
+                    background-color: yellow;
+                  }
+                  .multi-cols-mid {
+                    background-color: lightblue;
+                  }
+                  .multi-cols-right {
+                    background-color: lightgreen;
+                  }
+                  .multi-cols-2 {
+                    width: 9999px;
+                    padding: 10px;
+                    word-break: break-all;
+                    box-sizing: border-box;
+                    display: table-cell;
+                  }
+                </p>
+              </div>
+            </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+</body>
+
+</html>
